@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Globe,
@@ -13,7 +13,7 @@ import {
   Star,
   ChevronLeft,
   ChevronRight,
-} from 'lucide-react';
+} from "lucide-react";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -32,108 +32,143 @@ const Home = () => {
 
   const heroSlides = [
     {
-      title: 'Premium Quality Exports',
-      subtitle: 'Delivering Excellence Worldwide',
-      image: 'https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      title: "Premium Quality Exports",
+      subtitle: "Delivering Excellence Worldwide",
+      image:
+        "https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=1920",
     },
     {
-      title: 'Global Trade Solutions',
-      subtitle: 'Your Trusted Export Partner',
-      image: 'https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      title: "Global Trade Solutions",
+      subtitle: "Your Trusted Export Partner",
+      image:
+        "https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=1920",
     },
     {
-      title: 'Quality You Can Trust',
-      subtitle: 'Excellence in Every Shipment',
-      image: 'https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      title: "Quality You Can Trust",
+      subtitle: "Excellence in Every Shipment",
+      image:
+        "https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=1920",
     },
   ];
 
   const features = [
     {
       icon: Globe,
-      title: 'Global Reach',
-      description: 'Serving clients across 50+ countries with reliable export services',
+      title: "Global Reach",
+      description:
+        "Serving clients across 50+ countries with reliable export services",
     },
     {
       icon: Shield,
-      title: 'Quality Assured',
-      description: 'Certified products meeting international quality standards',
+      title: "Quality Assured",
+      description: "Certified products meeting international quality standards",
     },
     {
       icon: TrendingUp,
-      title: 'Competitive Pricing',
-      description: 'Best market rates with transparent pricing structure',
+      title: "Competitive Pricing",
+      description: "Best market rates with transparent pricing structure",
     },
     {
       icon: Clock,
-      title: 'Timely Delivery',
-      description: 'On-time shipments with efficient logistics management',
+      title: "Timely Delivery",
+      description: "On-time shipments with efficient logistics management",
     },
   ];
 
   const products = [
     {
-      name: 'Agricultural Products',
-      description: 'Fresh produce and grains sourced from premium farms',
-      image: 'https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Agriculture',
+      name: "Limestone Slabs & Tiles",
+      description: [
+        "Kadappa Black & Kota Limestone available",
+        "Machine-cut, export-grade quality",
+        "Perfect for flooring & wall applications",
+        "Highly durable natural stone",
+      ],
+      image: "/Images/lime.webp",
+      category: "Limestone",
     },
     {
-      name: 'Textiles & Fabrics',
-      description: 'High-quality textiles and traditional fabrics',
-      image: 'https://images.pexels.com/photos/3738386/pexels-photo-3738386.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Textiles',
+      name: "Natural Pebble Stones",
+      description: [
+        "Chocolate, river & white pebbles",
+        "Best for landscaping & garden design",
+        "Smooth natural finish",
+        "Suitable for pathways & decor",
+      ],
+      image: "/Images/natural.webp",
+      category: "Pebbles",
     },
     {
-      name: 'Spices & Herbs',
-      description: 'Authentic spices with rich aroma and flavor',
-      image: 'https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Food',
+      name: "Wall Cladding Stones",
+      description: [
+        "Basalt & granite cladding options",
+        "Ideal for exterior elevations",
+        "Weather-resistant natural material",
+        "Elegant & modern wall designs",
+      ],
+      image: "/Images/wall.webp",
+      category: "Cladding",
     },
     {
-      name: 'Handicrafts',
-      description: 'Traditional handcrafted items and artifacts',
-      image: 'https://images.pexels.com/photos/3094035/pexels-photo-3094035.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Crafts',
+      name: "Marble Mosaic Chips",
+      description: [
+        "Premium milk-white marble chips",
+        "Perfect for terrazzo flooring",
+        "Ideal for landscape decoration",
+        "Uniform size & export quality",
+      ],
+      image: "/Images/marble.webp",
+      category: "Marble Chips",
     },
     {
-      name: 'Industrial Goods',
-      description: 'Quality industrial products and machinery parts',
-      image: 'https://images.pexels.com/photos/1476321/pexels-photo-1476321.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Industrial',
+      name: "Cobble Stones",
+      description: [
+        "Granite cobbles & tumbled finish",
+        "Durable for pathways & driveways",
+        "Weather-proof natural stone",
+        "Available in multiple colors",
+      ],
+      image: "/Images/cobble.webp",
+      category: "Cobbles",
     },
     {
-      name: 'Leather Products',
-      description: 'Premium leather goods and accessories',
-      image: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'Fashion',
+      name: "Pebble Stones (Tumbled)",
+      description: [
+        "Smooth tumbled natural pebbles",
+        "Used for gardens & aquariums",
+        "Ideal for decorative flooring",
+        "Premium export-grade quality",
+      ],
+      image: "/Images/pebbe.webp",
+
+      category: "Pebbles",
     },
   ];
 
   const stats = [
-    { number: '500+', label: 'Happy Clients', icon: Users },
-    { number: '50+', label: 'Countries Served', icon: Globe },
-    { number: '10K+', label: 'Shipments Delivered', icon: Package },
-    { number: '15+', label: 'Years Experience', icon: Award },
+    { number: "500+", label: "Happy Clients", icon: Users },
+    { number: "50+", label: "Countries Served", icon: Globe },
+    { number: "10K+", label: "Shipments Delivered", icon: Package },
+    { number: "15+", label: "Years Experience", icon: Award },
   ];
 
   const testimonials = [
     {
-      name: 'John Smith',
-      company: 'Global Trading Co.',
-      text: 'Outstanding service and quality products. Bravo Exports has been our trusted partner for 5 years.',
+      name: "John Smith",
+      company: "Global Trading Co.",
+      text: "Outstanding service and quality products. Bravo Exports has been our trusted partner for 5 years.",
       rating: 5,
     },
     {
-      name: 'Sarah Johnson',
-      company: 'Premium Imports Ltd',
-      text: 'Reliable, professional, and always delivers on time. Highly recommend their services.',
+      name: "Sarah Johnson",
+      company: "Premium Imports Ltd",
+      text: "Reliable, professional, and always delivers on time. Highly recommend their services.",
       rating: 5,
     },
     {
-      name: 'Michael Chen',
-      company: 'Asia Pacific Trading',
-      text: 'Excellent quality control and competitive pricing. A pleasure to work with.',
+      name: "Michael Chen",
+      company: "Asia Pacific Trading",
+      text: "Excellent quality control and competitive pricing. A pleasure to work with.",
       rating: 5,
     },
   ];
@@ -145,7 +180,9 @@ const Home = () => {
           <div
             key={index}
             className={`absolute inset-0 transition-all duration-1000 ${
-              index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+              index === currentSlide
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-110"
             }`}
           >
             <div
@@ -160,30 +197,30 @@ const Home = () => {
                   <h1
                     className={`text-5xl md:text-7xl font-bold text-white mb-6 transition-all duration-1000 ${
                       index === currentSlide
-                        ? 'translate-y-0 opacity-100'
-                        : 'translate-y-10 opacity-0'
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
                     }`}
-                    style={{ transitionDelay: '200ms' }}
+                    style={{ transitionDelay: "200ms" }}
                   >
                     {slide.title}
                   </h1>
                   <p
                     className={`text-xl md:text-2xl text-gray-200 mb-8 transition-all duration-1000 ${
                       index === currentSlide
-                        ? 'translate-y-0 opacity-100'
-                        : 'translate-y-10 opacity-0'
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
                     }`}
-                    style={{ transitionDelay: '400ms' }}
+                    style={{ transitionDelay: "400ms" }}
                   >
                     {slide.subtitle}
                   </p>
                   <div
                     className={`flex flex-wrap gap-4 transition-all duration-1000 ${
                       index === currentSlide
-                        ? 'translate-y-0 opacity-100'
-                        : 'translate-y-10 opacity-0'
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
                     }`}
-                    style={{ transitionDelay: '600ms' }}
+                    style={{ transitionDelay: "600ms" }}
                   >
                     <Link
                       to="/products"
@@ -212,21 +249,27 @@ const Home = () => {
               onClick={() => setCurrentSlide(index)}
               className={`transition-all duration-300 rounded-full ${
                 index === currentSlide
-                  ? 'w-12 h-3 bg-white'
-                  : 'w-3 h-3 bg-white/50 hover:bg-white/75'
+                  ? "w-12 h-3 bg-white"
+                  : "w-3 h-3 bg-white/50 hover:bg-white/75"
               }`}
             />
           ))}
         </div>
 
         <button
-          onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
+          onClick={() =>
+            setCurrentSlide((prev) =>
+              prev === 0 ? heroSlides.length - 1 : prev - 1
+            )
+          }
           className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300 z-10"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
-          onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
+          onClick={() =>
+            setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+          }
           className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300 z-10"
         >
           <ChevronRight className="w-6 h-6" />
@@ -251,7 +294,9 @@ const Home = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -265,7 +310,10 @@ const Home = () => {
               Featured Products
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto mb-4 rounded-full animate-expandWidth"></div>
-            <p className="text-xl text-gray-600 animate-fadeIn" style={{ animationDelay: '200ms' }}>
+            <p
+              className="text-xl text-gray-600 animate-fadeIn"
+              style={{ animationDelay: "200ms" }}
+            >
               Discover our premium range of export quality products
             </p>
           </div>
@@ -294,7 +342,11 @@ const Home = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors duration-300">
                     {product.name}
                   </h3>
-                  <p className="text-gray-600 mb-4">{product.description}</p>
+                  <ul className="text-gray-600 mb-4 list-disc list-inside space-y-1">
+                    {product.description.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
                   <button className="flex items-center space-x-2 text-emerald-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
                     <span>Learn More</span>
                     <ArrowRight className="w-4 h-4" />
@@ -319,7 +371,10 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-br from-emerald-600 to-teal-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div
+            className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2 animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -334,7 +389,9 @@ const Home = () => {
                     <stat.icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                  {stat.number}
+                </div>
                 <div className="text-white/90 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -349,7 +406,10 @@ const Home = () => {
               Client Testimonials
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto mb-4 rounded-full animate-expandWidth"></div>
-            <p className="text-xl text-gray-600 animate-fadeIn" style={{ animationDelay: '200ms' }}>
+            <p
+              className="text-xl text-gray-600 animate-fadeIn"
+              style={{ animationDelay: "200ms" }}
+            >
               What our clients say about us
             </p>
           </div>
@@ -370,10 +430,16 @@ const Home = () => {
                     />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
+                <p className="text-gray-600 mb-6 leading-relaxed italic">
+                  "{testimonial.text}"
+                </p>
                 <div className="border-t pt-4">
-                  <div className="font-bold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.company}</div>
+                  <div className="font-bold text-gray-900">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {testimonial.company}
+                  </div>
                 </div>
               </div>
             ))}
@@ -383,19 +449,30 @@ const Home = () => {
 
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute w-full h-full" style={{
-            backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-            backgroundSize: '50px 50px',
-          }}></div>
+          <div
+            className="absolute w-full h-full"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, white 1px, transparent 1px)",
+              backgroundSize: "50px 50px",
+            }}
+          ></div>
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fadeIn">
             Ready to Start Exporting?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-fadeIn" style={{ animationDelay: '200ms' }}>
-            Get in touch with us today and discover how we can help grow your business globally
+          <p
+            className="text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-fadeIn"
+            style={{ animationDelay: "200ms" }}
+          >
+            Get in touch with us today and discover how we can help grow your
+            business globally
           </p>
-          <div className="flex flex-wrap justify-center gap-4 animate-fadeInUp" style={{ animationDelay: '400ms' }}>
+          <div
+            className="flex flex-wrap justify-center gap-4 animate-fadeInUp"
+            style={{ animationDelay: "400ms" }}
+          >
             <Link
               to="/contact"
               className="group px-8 py-4 bg-white text-emerald-600 rounded-lg font-semibold flex items-center space-x-2 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"

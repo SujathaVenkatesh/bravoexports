@@ -162,7 +162,7 @@ const Products = () => {
                 placeholder="Search products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 transition-all duration-300 outline-none"
+                className="w-full h-12 pl-12 pr-4 border border-gray-300 rounded-xl text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
               />
             </div>
             <div className="flex items-center space-x-2 w-full lg:w-auto animate-slideInRight">
