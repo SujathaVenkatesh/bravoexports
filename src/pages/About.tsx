@@ -1,4 +1,5 @@
 import { Award, Target, Eye, Users, TrendingUp, Globe, CheckCircle, Shield } from 'lucide-react';
+import names from '../../public/Images/dfsdf.jpeg';
 
 const About = () => {
   const values = [
@@ -64,7 +65,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-24 px-12">
+    <div className="min-h-screen bg-white pt-24">
       <section className="relative py-20 bg-gradient-to-r from-emerald-600 to-teal-600 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
@@ -93,7 +94,7 @@ const About = () => {
               <div className="relative">
                 <div className="absolute -top-6 -left-6 w-48 h-48 bg-gradient-to-r from-emerald-200 to-teal-200 rounded-3xl animate-float"></div>
                 <img
-                  src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src={names}
                   alt="About Us"
                   className="relative rounded-2xl shadow-2xl w-full h-96 object-cover transform hover:scale-105 transition-transform duration-500"
                 />

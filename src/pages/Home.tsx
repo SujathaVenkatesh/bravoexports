@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Globe, Shield, Users, Award } from "lucide-react";
 import {
   ArrowRight,
-  Globe,
-  TrendingUp,
-  Shield,
-  Award,
-  Users,
   Package,
-  Clock,
-  CheckCircle,
   Star,
   ChevronLeft,
   ChevronRight,
@@ -17,61 +11,53 @@ import {
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 3);
-    }, 5000);
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
   const heroSlides = [
     {
-      title: "Premium Quality Exports",
-      subtitle: "Delivering Excellence Worldwide",
-      image:
-        "https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      title: "Premium Tiles & Stones for",
+      bold: "Global Projects",
+      subtitle:
+        "Supplying world-class granite, marble, tiles, and natural stones crafted with precision for international standards.",
+      image: "/Images/banner1.png",
     },
     {
-      title: "Global Trade Solutions",
-      subtitle: "Your Trusted Export Partner",
-      image:
-        "https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    },
-    {
-      title: "Quality You Can Trust",
-      subtitle: "Excellence in Every Shipment",
-      image:
-        "https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      title: "Crafted with Excellence,",
+      bold: "Delivered Worldwide",
+      subtitle:
+        "High-grade stones and tiles designed for architecture, interiors, and landscaping — shipped safely across the globe.",
+      image: "/Images/banner2.png",
     },
   ];
 
   const features = [
     {
       icon: Globe,
-      title: "Global Reach",
-      description:
-        "Serving clients across 50+ countries with reliable export services",
+      title: "Global Exports",
+      description: "Delivering high-quality natural stones worldwide.",
     },
     {
       icon: Shield,
-      title: "Quality Assured",
-      description: "Certified products meeting international quality standards",
+      title: "Quality Assurance",
+      description: "Every product undergoes strict inspection and testing.",
     },
     {
-      icon: TrendingUp,
-      title: "Competitive Pricing",
-      description: "Best market rates with transparent pricing structure",
+      icon: Users,
+      title: "Expert Team",
+      description:
+        "Our skilled professionals manage production & logistics efficiently.",
     },
     {
-      icon: Clock,
-      title: "Timely Delivery",
-      description: "On-time shipments with efficient logistics management",
+      icon: Award,
+      title: "Trusted Brand",
+      description:
+        "Recognized as a leading exporter of natural stones in India.",
     },
   ];
 
@@ -85,7 +71,6 @@ const Home = () => {
         "Highly durable natural stone",
       ],
       image: "/Images/lime.webp",
-      category: "Limestone",
     },
     {
       name: "Natural Pebble Stones",
@@ -96,7 +81,6 @@ const Home = () => {
         "Suitable for pathways & decor",
       ],
       image: "/Images/natural.webp",
-      category: "Pebbles",
     },
     {
       name: "Wall Cladding Stones",
@@ -107,7 +91,6 @@ const Home = () => {
         "Elegant & modern wall designs",
       ],
       image: "/Images/wall.webp",
-      category: "Cladding",
     },
     {
       name: "Marble Mosaic Chips",
@@ -118,7 +101,6 @@ const Home = () => {
         "Uniform size & export quality",
       ],
       image: "/Images/marble.webp",
-      category: "Marble Chips",
     },
     {
       name: "Cobble Stones",
@@ -129,7 +111,6 @@ const Home = () => {
         "Available in multiple colors",
       ],
       image: "/Images/cobble.webp",
-      category: "Cobbles",
     },
     {
       name: "Pebble Stones (Tumbled)",
@@ -140,8 +121,6 @@ const Home = () => {
         "Premium export-grade quality",
       ],
       image: "/Images/pebbe.webp",
-
-      category: "Pebbles",
     },
   ];
 
@@ -154,341 +133,363 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: "John Smith",
-      company: "Global Trading Co.",
-      text: "Outstanding service and quality products. Bravo Exports has been our trusted partner for 5 years.",
+      name: "Manivannan K",
+      location: "Chennai, Tamil Nadu",
+      product: "Pebble Stone",
+      text: "Good",
       rating: 5,
+      date: "18-November-25",
     },
     {
-      name: "Sarah Johnson",
-      company: "Premium Imports Ltd",
-      text: "Reliable, professional, and always delivers on time. Highly recommend their services.",
+      name: "Satyanath",
+      location: "Thrissur, Kerala",
+      product: "Granite Stone",
+      text: "Response 👍",
       rating: 5,
+      date: "24-September-25",
     },
     {
-      name: "Michael Chen",
-      company: "Asia Pacific Trading",
-      text: "Excellent quality control and competitive pricing. A pleasure to work with.",
-      rating: 5,
+      name: "Praveen Kumar",
+      location: "Dharmapuri, Tamil Nadu",
+      product: "River Pebble",
+      text: "Good",
+      rating: 3,
+      date: "07-September-25",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
+      {/* HERO */}
       <section className="relative h-screen overflow-hidden">
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-1000 ${
-              index === currentSlide
-                ? "opacity-100 scale-100"
-                : "opacity-0 scale-110"
+            className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
+              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
             <div
-              className="absolute inset-0 bg-cover bg-center"
+              className="absolute inset-0 bg-cover bg-center scale-105 transform transition-transform duration-1000"
               style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-            </div>
-            <div className="relative h-full flex items-center">
-              <div className="container mx-auto px-4">
-                <div className="max-w-3xl">
-                  <h1
-                    className={`text-5xl md:text-7xl font-bold text-white mb-6 transition-all duration-1000 ${
-                      index === currentSlide
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-10 opacity-0"
-                    }`}
-                    style={{ transitionDelay: "200ms" }}
-                  >
-                    {slide.title}
-                  </h1>
-                  <p
-                    className={`text-xl md:text-2xl text-gray-200 mb-8 transition-all duration-1000 ${
-                      index === currentSlide
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-10 opacity-0"
-                    }`}
-                    style={{ transitionDelay: "400ms" }}
-                  >
-                    {slide.subtitle}
-                  </p>
-                  <div
-                    className={`flex flex-wrap gap-4 transition-all duration-1000 ${
-                      index === currentSlide
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-10 opacity-0"
-                    }`}
-                    style={{ transitionDelay: "600ms" }}
-                  >
-                    <Link
-                      to="/products"
-                      className="group px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-lg font-semibold flex items-center space-x-2 hover:shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-105"
-                    >
-                      <span>View Products</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <Link
-                      to="/contact"
-                      className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold border-2 border-white/30 hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105"
-                    >
-                      Get Quote
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent" />
           </div>
         ))}
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
-          {heroSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`transition-all duration-300 rounded-full ${
-                index === currentSlide
-                  ? "w-12 h-3 bg-white"
-                  : "w-3 h-3 bg-white/50 hover:bg-white/75"
-              }`}
-            />
-          ))}
+        {/* HERO CONTENT */}
+        <div className="relative z-20 h-full flex items-center justify-center text-center px-6 lg:px-24">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white leading-[1.05] transform opacity-0 animate-fadeUp">
+              {heroSlides[currentSlide].title}
+              <span className="block font-semibold mt-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500 transform opacity-0 animate-fadeUp delay-200">
+                {heroSlides[currentSlide].bold}
+              </span>
+            </h1>
+
+            <p className="mt-6 text-base sm:text-lg text-gray-200 leading-relaxed opacity-0 animate-fadeUp delay-350">
+              {heroSlides[currentSlide].subtitle}
+            </p>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-4 opacity-0 animate-fadeUp delay-500">
+              <Link
+                to="/products"
+                className="px-8 py-3 bg-[#D4AF37] text-black font-semibold rounded-full shadow-md hover:bg-[#c7a030] transition transform hover:-translate-y-1"
+              >
+                Explore Products
+                <ArrowRight className="w-4 h-4 inline-block ml-2" />
+              </Link>
+
+              <Link
+                to="/contact"
+                className="px-8 py-3 bg-transparent border border-white/50 text-white rounded-full font-semibold backdrop-blur-md hover:bg-white hover:text-black transition transform hover:-translate-y-1"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
         </div>
 
+        {/* ARROWS */}
         <button
           onClick={() =>
             setCurrentSlide((prev) =>
               prev === 0 ? heroSlides.length - 1 : prev - 1
             )
           }
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300 z-10"
+          aria-label="Previous slide"
+          className="absolute left-6 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full border border-white/20 transition"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5" />
         </button>
+
         <button
-          onClick={() =>
-            setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-          }
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300 z-10"
+          onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
+          aria-label="Next slide"
+          className="absolute right-6 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full border border-white/20 transition"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5" />
         </button>
+
+        {/* indicators */}
+        <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-center gap-3">
+          {heroSlides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentSlide(i)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                i === currentSlide ? "bg-white scale-110" : "bg-white/40"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white px-10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fadeInUp"
-                style={{ animationDelay: `${index * 100}ms` }}
+      {/* WHO WE ARE */}
+      <section className="py-20 bg-white px-6 lg:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="space-y-6 animate-fadeUp">
+            <h3 className="text-sm tracking-widest text-orange-700 font-bold uppercase">
+              Who We Are
+            </h3>
+            <h2 className="text-3xl lg:text-4xl font-semi-bold text-gray-900 leading-snug ">
+              India’s Premier Natural Stone Exporter
+            </h2>
+
+            <p className="text-gray-700 text-base leading-relaxed">
+              Established in 2008, Bravos Exports trades, wholesales, and
+              exports premium Natural Stones. Our products meet international
+              quality standards and are crafted using state-of-the-art
+              manufacturing processes.
+            </p>
+
+            <p className="text-gray-700 text-base leading-relaxed">
+              A skilled team ensures strict quality checks and timely delivery,
+              helping us build a loyal global clientele.
+            </p>
+
+            <div className="flex gap-4 mt-4">
+              <Link
+                to="/about"
+                className="inline-block px-8 py-3 bg-orange-600 text-white rounded-full font-semibold shadow hover:bg-orange-500 transform hover:-translate-y-1 transition"
               >
-                <div className="relative mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
-                  <div className="relative w-16 h-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500">
-                    <feature.icon className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+                About Us
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-block px-8 py-3 border border-gray-200 text-gray-700 rounded-full font-semibold hover:shadow transition"
+              >
+                Get Quote
+              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition">
+            <img
+              src="/Images/nameas.jpg"
+              alt="About Bravos Exports"
+              className="w-full h-[420px] object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white px-10">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 animate-fadeIn">
-              Featured Products
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto mb-4 rounded-full animate-expandWidth"></div>
-            <p
-              className="text-xl text-gray-600 animate-fadeIn"
-              style={{ animationDelay: "200ms" }}
-            >
-              Discover our premium range of export quality products
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
+      {/* FEATURES */}
+      <section className="py-16 bg-gray-50 px-6 lg:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, i) => {
+            const Icon = feature.icon;
+            return (
               <div
-                key={index}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fadeInUp"
-                style={{ animationDelay: `${index * 100}ms` }}
+                key={i}
+                className="p-6 bg-white rounded-2xl shadow-md hover:shadow-2xl transition transform hover:-translate-y-2"
+                style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div className="relative overflow-hidden h-64">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="absolute top-4 right-4">
-                    <span className="px-4 py-2 bg-white/90 backdrop-blur-sm text-emerald-600 rounded-full text-sm font-semibold transform translate-x-full group-hover:translate-x-0 transition-transform duration-500">
-                      {product.category}
-                    </span>
-                  </div>
+                <div className="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors duration-300">
-                    {product.name}
-                  </h3>
-                  <ul className="text-gray-600 mb-4 list-disc list-inside space-y-1">
-                    {product.description.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
-                  <button className="flex items-center space-x-2 text-emerald-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                    <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4" />
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray-600">{feature.description}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* PRODUCTS */}
+      <section className="py-20 bg-white px-6 md:px-12 lg:px-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Featured Products
+          </h2>
+          <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+            Explore our finest selection of premium stones crafted for luxury
+            construction, architecture & interiors.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product, i) => (
+            <article
+              key={i}
+              className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition transform group"
+              style={{ animationDelay: `${i * 120}ms` }}
+            >
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute left-4 top-4 bg-white/70 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                  {product.name.split(" ")[0]}
+                </div>
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  {product.name}
+                </h3>
+                <ul className="list-disc list-inside text-gray-600 mb-4 space-y-1">
+                  {product.description.map((d, j) => (
+                    <li key={j} className="text-sm">
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex items-center justify-between">
+                  <Link
+                    to="/products"
+                    className="text-emerald-600 font-semibold hover:text-emerald-700 flex items-center gap-2"
+                  >
+                    Learn More <ArrowRight className="w-4 h-4" />
+                  </Link>
+
+                  <button className="px-3 py-2 bg-emerald-600 text-white rounded-full text-sm font-semibold hover:bg-emerald-700 transition">
+                    Request Quote
                   </button>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              to="/products"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-105"
-            >
-              <span>View All Products</span>
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-emerald-600 to-teal-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
-          <div
-            className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2 animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
+      {/* STATS */}
+      <section className="py-16 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {stats.map((stat, i) => {
+            const Icon = stat.icon;
+            return (
               <div
-                key={index}
-                className="text-center transform hover:scale-110 transition-transform duration-300 animate-fadeInUp"
-                style={{ animationDelay: `${index * 100}ms` }}
+                key={i}
+                className="p-6 rounded-2xl transform transition hover:-translate-y-2"
+                style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div className="mb-4 flex justify-center">
-                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <stat.icon className="w-8 h-8 text-white" />
-                  </div>
+                <div className="w-16 h-16 bg-white/20 mx-auto rounded-2xl flex items-center justify-center mb-4">
+                  <Icon className="w-7 h-7 text-white" />
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-white/90 font-medium">{stat.label}</div>
+                <h3 className="text-3xl font-bold">{stat.number}</h3>
+                <p className="text-white/90 mt-1">{stat.label}</p>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white px-10">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 animate-fadeIn">
-              Client Testimonials
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto mb-4 rounded-full animate-expandWidth"></div>
-            <p
-              className="text-xl text-gray-600 animate-fadeIn"
-              style={{ animationDelay: "200ms" }}
-            >
-              What our clients say about us
-            </p>
-          </div>
+      {/* TESTIMONIALS */}
+      <section className="py-16 bg-gray-50 px-6 md:px-10">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Client Testimonials
+          </h2>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fadeInUp"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 text-yellow-400 fill-current transform group-hover:scale-110 transition-transform duration-300"
-                      style={{ transitionDelay: `${i * 50}ms` }}
-                    />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed italic">
-                  "{testimonial.text}"
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <div
+              key={i}
+              className="p-6 bg-white rounded-2xl shadow-md hover:shadow-2xl transition transform hover:-translate-y-2"
+              style={{ animationDelay: `${i * 140}ms` }}
+            >
+              <div className="flex mb-3">
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} className="text-yellow-400 w-5 h-5" />
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-4">"{t.text}"</p>
+              <div className="border-t pt-3">
+                <h4 className="font-semibold text-gray-900">{t.name}</h4>
+                <p className="text-sm text-gray-500">{t.location}</p>
+                <p className="text-sm text-gray-700">
+                  Product: <span className="font-medium">{t.product}</span>
                 </p>
-                <div className="border-t pt-4">
-                  <div className="font-bold text-gray-900">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-gray-500">
-                    {testimonial.company}
-                  </div>
-                </div>
+                <p className="text-xs text-gray-400 mt-1">Date: {t.date}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute w-full h-full"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle, white 1px, transparent 1px)",
-              backgroundSize: "50px 50px",
-            }}
-          ></div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fadeIn">
+      {/* CONTACT CTA */}
+      <section className="relative py-20 text-center overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute top-0 left-0 w-full h-full object-cover z-0 brightness-[0.55] saturate-[1.05] contrast-[1.05]"
+        >
+          <source src="/videos/6008078-uhd_4096_2160_24fps.mp4" type="video/mp4" />
+        </video>
+
+        <div className="relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Start Exporting?
           </h2>
-          <p
-            className="text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-fadeIn"
-            style={{ animationDelay: "200ms" }}
-          >
+          <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
             Get in touch with us today and discover how we can help grow your
-            business globally
+            business globally.
           </p>
-          <div
-            className="flex flex-wrap justify-center gap-4 animate-fadeInUp"
-            style={{ animationDelay: "400ms" }}
-          >
+
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
-              className="group px-8 py-4 bg-white text-emerald-600 rounded-lg font-semibold flex items-center space-x-2 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-3 bg-white text-emerald-600 rounded-full font-semibold hover:bg-gray-200 transition"
             >
-              <span>Contact Us</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Contact Us
             </Link>
             <Link
               to="/products"
-              className="px-8 py-4 bg-transparent text-white rounded-lg font-semibold border-2 border-white hover:bg-white hover:text-emerald-600 transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-3 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-emerald-600 transition"
             >
               Browse Products
             </Link>
           </div>
         </div>
       </section>
+
+      {/* small custom keyframes (keeps Tailwind-first) */}
+      <style>
+        {`
+          @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(16px) scale(.995); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+          }
+          .animate-fadeUp {
+            animation: fadeUp 700ms cubic-bezier(.2,.9,.2,1) forwards;
+          }
+          /* small delay helpers (you can remove or keep) */
+          .delay-100 { animation-delay: 100ms; }
+          .delay-200 { animation-delay: 200ms; }
+          .delay-300 { animation-delay: 300ms; }
+          .delay-350 { animation-delay: 350ms; }
+          .delay-500 { animation-delay: 500ms; }
+        `}
+      </style>
     </div>
   );
 };
