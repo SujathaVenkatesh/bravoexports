@@ -102,3 +102,19 @@
 .scale-hover:hover {
   transform: scale(1.08);
 }
+
+.hero-image-fade {
+  animation: bgZoom 20s ease-in-out infinite;
+}
+
+@keyframes bgZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
