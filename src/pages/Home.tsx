@@ -189,6 +189,16 @@ const Home = () => {
             >
               {heroSlides[currentSlide].subtitle}
             </p>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-4 animate-fade-in">
+              <Link to="/products" className="btn-primary">
+                Explore Products →
+              </Link>
+
+              <Link to="/contact" className="btn-secondary">
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       </section>
