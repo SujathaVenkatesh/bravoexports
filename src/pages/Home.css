@@ -1,0 +1,104 @@
+/* HERO FADE IMAGE */
+.hero-image-fade {
+  animation: fadeImage 6s ease-in-out infinite;
+}
+
+@keyframes fadeImage {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* HERO TITLE */
+.hero-title {
+  font-size: 2.5rem;
+  color: white;
+  line-height: 1.2;
+  animation: slideUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+@media (min-width: 640px) {
+  .hero-title { font-size: 3.5rem; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* BOLD TITLE EFFECT */
+.hero-bold {
+  font-weight: 700;
+  color: #FFD700;
+  animation: glowText 2.5s infinite ease-in-out;
+}
+
+@keyframes glowText {
+  0%,100% { text-shadow: 0 0 5px #FFD700; }
+  50% { text-shadow: 0 0 20px #ffea80; }
+}
+
+/* SUBTITLE FLOAT */
+.hero-subtitle {
+  color: #e5e5e5;
+  font-size: 1.1rem;
+  animation: floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText {
+  0%,100% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* BUTTON ANIMATIONS */
+.btn-primary {
+  padding: 12px 28px;
+  background: #D4AF37;
+  color: black;
+  border-radius: 32px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-secondary {
+  padding: 12px 28px;
+  border: 1px solid #ffffff90;
+  border-radius: 32px;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
+}
+
+/* GENERIC FADE ANIMATIONS */
+.animate-fade-up {
+  animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* PRODUCT IMAGE HOVER */
+.scale-hover {
+  transition: 0.5s;
+}
+
+.scale-hover:hover {
+  transform: scale(1.08);
+}
