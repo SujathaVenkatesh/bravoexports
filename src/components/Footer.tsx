@@ -37,10 +37,9 @@ const Footer = () => {
   const col2 = products.slice(mid);
 
   return (
-    <footer className="bg-gray-900 text-gray-300 px-10">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-
+    <footer className="bg-gray-900 text-gray-300 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           {/* ---------- COMPANY ----------- */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
@@ -49,10 +48,12 @@ const Footer = () => {
                   <span className="text-emerald-600 font-bold text-xl">B</span>
                 </div>
               </div>
-              <span className="text-2xl font-bold text-white">Bravo Exports</span>
+              <span className="text-2xl font-bold text-white whitespace-nowrap">
+                Bravo Exports
+              </span>
             </div>
 
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed text-sm">
               Your trusted partner for premium quality exports worldwide.
             </p>
 
@@ -71,59 +72,83 @@ const Footer = () => {
 
           {/* ---------- QUICK LINKS ----------- */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">Company Profile</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">Profile</Link></li>
-              <li><Link to="/products">Our Products</Link></li>
-              <li><a href="#">Corporate Video</a></li>
-              <li><a href="#">Corporate Brochure</a></li>
-              <li><a href="#">Corporate Presentation</a></li>
-              <li><Link to="/contact">Contact Us</Link></li>
-              <li><a href="#">Sitemap</a></li>
+            <h3 className="text-lg font-bold text-white mb-4">
+              Company Profile
+            </h3>
+            <ul className="space-y-2 text-gray-300 text-sm">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">Profile</Link>
+              </li>
+              <li>
+                <Link to="/products">Our Products</Link>
+              </li>
+              <li>
+                <a href="#">Corporate Video</a>
+              </li>
+              <li>
+                <a href="#">Corporate Brochure</a>
+              </li>
+              <li>
+                <a href="#">Corporate Presentation</a>
+              </li>
+              <li>
+                <Link to="/contact">Contact Us</Link>
+              </li>
+              <li>
+                <a href="#">Sitemap</a>
+              </li>
             </ul>
           </div>
 
-          {/* ---------- PRODUCTS (2 BIG COLUMNS) ----------- */}
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-bold text-white mb-4">Products & Services</h3>
+          {/* ---------- PRODUCTS ----------- */}
+          <div className="sm:col-span-2 md:col-span-2">
+            <h3 className="text-lg font-bold text-white mb-4">
+              Products & Services
+            </h3>
 
-            <div className="grid grid-cols-2 gap-10 text-gray-300">
-
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-300">
               {/* COLUMN 1 */}
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm">
                 {col1.map((item, i) => (
-                  <li key={i} className="whitespace-nowrap overflow-hidden text-ellipsis">
+                  <li key={i} className="break-normal">
                     {item}
                   </li>
                 ))}
               </ul>
 
               {/* COLUMN 2 */}
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm">
                 {col2.map((item, i) => (
-                  <li key={i} className="whitespace-nowrap overflow-hidden text-ellipsis">
+                  <li key={i} className="break-normal">
                     {item}
                   </li>
                 ))}
               </ul>
-
             </div>
           </div>
-
         </div>
 
         {/* ---------- FOOTER BOTTOM ----------- */}
-        <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between">
-          <p className="text-gray-400 text-sm">© {currentYear} Bravo Exports. All rights reserved.</p>
+        <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
+          <p className="text-gray-400 text-sm">
+            © {currentYear} Bravo Exports. All rights reserved.
+          </p>
 
-          <div className="flex space-x-6 text-sm">
-            <a href="#" className="hover:text-emerald-400">Privacy Policy</a>
-            <a href="#" className="hover:text-emerald-400">Terms of Service</a>
-            <a href="#" className="hover:text-emerald-400">Sitemap</a>
+          <div className="flex justify-center md:justify-end space-x-6 text-sm">
+            <a href="#" className="hover:text-emerald-400">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-emerald-400">
+              Terms of Service
+            </a>
+            <a href="#" className="hover:text-emerald-400">
+              Sitemap
+            </a>
           </div>
         </div>
-
       </div>
     </footer>
   );

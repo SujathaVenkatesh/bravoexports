@@ -35,10 +35,28 @@ const Home = () => {
   }, []);
 
   const features = [
-    { icon: Globe, title: "Global Exports", description: "Delivering high-quality natural stones worldwide." },
-    { icon: Shield, title: "Quality Assurance", description: "Every product undergoes strict inspection and testing." },
-    { icon: Users, title: "Expert Team", description: "Skilled professionals manage production & logistics efficiently." },
-    { icon: Award, title: "Trusted Brand", description: "Recognized as a leading exporter of natural stones in India." },
+    {
+      icon: Globe,
+      title: "Global Exports",
+      description: "Delivering high-quality natural stones worldwide.",
+    },
+    {
+      icon: Shield,
+      title: "Quality Assurance",
+      description: "Every product undergoes strict inspection and testing.",
+    },
+    {
+      icon: Users,
+      title: "Expert Team",
+      description:
+        "Skilled professionals manage production & logistics efficiently.",
+    },
+    {
+      icon: Award,
+      title: "Trusted Brand",
+      description:
+        "Recognized as a leading exporter of natural stones in India.",
+    },
   ];
 
   const products = [
@@ -48,7 +66,6 @@ const Home = () => {
         "Kadappa Black & Kota Limestone available",
         "Machine-cut, export-grade quality",
         "Perfect for flooring & wall applications",
-        "Highly durable natural stone",
       ],
       image: "/Images/lime.webp",
     },
@@ -58,7 +75,6 @@ const Home = () => {
         "Chocolate, river & white pebbles",
         "Best for landscaping & garden design",
         "Smooth natural finish",
-        "Suitable for pathways & decor",
       ],
       image: "/Images/natural.webp",
     },
@@ -68,7 +84,6 @@ const Home = () => {
         "Basalt & granite cladding options",
         "Ideal for exterior elevations",
         "Weather-resistant natural material",
-        "Elegant & modern wall designs",
       ],
       image: "/Images/wall.webp",
     },
@@ -78,7 +93,6 @@ const Home = () => {
         "Premium milk-white marble chips",
         "Perfect for terrazzo flooring",
         "Ideal for landscape decoration",
-        "Uniform size & export quality",
       ],
       image: "/Images/marble.webp",
     },
@@ -88,7 +102,6 @@ const Home = () => {
         "Granite cobbles & tumbled finish",
         "Durable for pathways & driveways",
         "Weather-proof natural stone",
-        "Available in multiple colors",
       ],
       image: "/Images/cobble.webp",
     },
@@ -98,7 +111,6 @@ const Home = () => {
         "Smooth tumbled natural pebbles",
         "Used for gardens & aquariums",
         "Ideal for decorative flooring",
-        "Premium export-grade quality",
       ],
       image: "/Images/pebbe.webp",
     },
@@ -143,16 +155,19 @@ const Home = () => {
       <section className="relative h-screen overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center hero-image-fade"
-          style={{ backgroundImage: `url(${heroSlides[currentSlide].image})` }}/>
+          style={{ backgroundImage: `url(${heroSlides[currentSlide].image})` }}
+        />
         <div className="absolute inset-0 bg-black/35"></div>
         <div className="relative z-10 h-full flex items-center justify-center text-center px-6 lg:px-24">
           <div className="max-w-3xl mx-auto animate-fade-up">
-<h1 className="hero-title ">
+            <h1 className="hero-title ">
               {heroSlides[currentSlide].title}
-              <span className="block hero-bold">{heroSlides[currentSlide].bold}</span>
+              <span className="block hero-bold">
+                {heroSlides[currentSlide].bold}
+              </span>
             </h1>
 
-<p className="hero-subtitle mt-6 ">
+            <p className="hero-subtitle mt-6 ">
               {heroSlides[currentSlide].subtitle}
             </p>
 
@@ -165,7 +180,6 @@ const Home = () => {
                 Contact Us
               </Link>
             </div>
-
           </div>
         </div>
       </section>
@@ -186,26 +200,38 @@ const Home = () => {
             </h2>
 
             <p className="text-gray-700 leading-relaxed">
-              Established in 2008, Bravos Exports trades, wholesales, and exports premium Natural Stones.
+              Established in 2008, Bravos Exports trades, wholesales, and
+              exports premium Natural Stones.
             </p>
 
             <p className="text-gray-700 leading-relaxed">
-              Our skilled team ensures strict quality checks and timely delivery.
+              Our skilled team ensures strict quality checks and timely
+              delivery.
             </p>
 
             <div className="flex gap-4 mt-4">
-              <Link to="/about" className="px-8 py-3 bg-orange-600 text-white rounded-full font-semibold">
+              <Link
+                to="/about"
+                className="px-8 py-3 bg-orange-600 text-white rounded-full font-semibold"
+              >
                 About Us
               </Link>
 
-              <Link to="/contact" className="px-8 py-3 border border-gray-300 text-gray-700 rounded-full font-semibold">
+              <Link
+                to="/contact"
+                className="px-8 py-3 border border-gray-300 text-gray-700 rounded-full font-semibold"
+              >
                 Get Quote
               </Link>
             </div>
           </div>
 
           <div className="rounded-xl overflow-hidden shadow-xl animate-fade-in">
-            <img src="/Images/nameas.jpg" alt="About Bravos Exports" className="w-full h-[420px] object-cover" />
+            <img
+              src="/Images/nameas.jpg"
+              alt="About Bravos Exports"
+              className="w-full h-[420px] object-cover"
+            />
           </div>
         </div>
       </section>
@@ -219,7 +245,10 @@ const Home = () => {
           {features.map((feature, i) => {
             const Icon = feature.icon;
             return (
-              <div key={i} className="p-6 bg-white rounded-2xl shadow-md animate-fade-up">
+              <div
+                key={i}
+                className="p-6 bg-white rounded-2xl shadow-md animate-fade-up"
+              >
                 <div className="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
@@ -232,47 +261,79 @@ const Home = () => {
           })}
         </div>
       </section>
-
-      {/* PRODUCTS */}
       <section className="py-20 bg-white px-6 md:px-12 lg:px-20">
         <div className="text-center mb-12 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Featured Products</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+            Featured Products
+          </h2>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, i) => (
-            <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-md animate-fade-up">
-              <div className="relative h-64 overflow-hidden">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover scale-hover" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {products.slice(0, 8).map((product, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-3xl overflow-hidden shadow-md animate-fade-up hover:shadow-xl transition"
+            >
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover scale-hover"
+                />
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">
                   {product.name}
                 </h3>
 
-                <div className="text-gray-600 mb-4 space-y-1">
-                  {product.description.map((d, j) => (
-                    <p key={j} className="text-sm">{d}</p>
+                {/* Sub Products */}
+                <div className="space-y-2 mb-3 text-base">
+                  {product.description.map((sub, j) => (
+                    <Link
+                      key={j}
+                      to={`/products/${sub.toLowerCase().replace(/\s+/g, "-")}`}
+                      className="block text-gray-500 font-medium hover:text-orange-600"
+                    >
+                      {sub}
+                    </Link>
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <Link to="/products" className="text-emerald-600 font-semibold">
-                    Learn More
-                  </Link>
+                <Link
+                  to={`/products/${product.name
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
+                  className="block text-emerald-600 font-semibold mb-4 hover:underline text-base"
+                >
+                  View All →
+                </Link>
 
-                  <button className="px-3 py-2 bg-emerald-600 text-white rounded-full text-sm">
-                    Request Quote
-                  </button>
-                </div>
+                <a
+                  href={`https://wa.me/919876543210?text=Hi%20I%20want%20details%20about%20${encodeURIComponent(
+                    product.name
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-4 py-2 bg-green-600 text-white rounded-full text-sm hover:bg-green-700"
+                >
+                  <i className="fa-brands fa-whatsapp text-lg"></i>
+                  WhatsApp
+                </a>
               </div>
             </div>
           ))}
         </div>
+
+        <div className="text-center mt-12">
+          <Link
+            to="/products"
+            className="px-8 py-3 bg-orange-600 text-white rounded-full font-semibold hover:bg-orange-700"
+          >
+            View All Products →
+          </Link>
+        </div>
       </section>
 
-      {/* STATS */}
       <section className="py-16 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {stats.map((stat, i) => {
@@ -293,12 +354,17 @@ const Home = () => {
       {/* TESTIMONIALS */}
       <section className="py-16 bg-gray-50 px-6 md:px-10">
         <div className="text-center mb-10 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Client Testimonials</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Client Testimonials
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <div key={i} className="p-6 bg-white rounded-2xl shadow-md animate-fade-up">
+            <div
+              key={i}
+              className="p-6 bg-white rounded-2xl shadow-md animate-fade-up"
+            >
               <div className="flex mb-3">
                 {Array.from({ length: t.rating }).map((_, j) => (
                   <Star key={j} className="text-yellow-400 w-5 h-5" />
@@ -319,7 +385,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
     </div>
   );
 };
